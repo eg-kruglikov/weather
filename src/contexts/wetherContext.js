@@ -21,7 +21,7 @@ const WetherContextProvider = ({ children }) => {
     dataSet(num)
   }
 
-  console.log('weatherData', data);
+  console.log('weatherData ------------------>', weth);
 
 
   const addHandler = (text) => {
@@ -33,50 +33,58 @@ const WetherContextProvider = ({ children }) => {
   }
 
 
-const dayWeater = []
+  const dayWeater = []
 
 
-let date = new Date().getDate() 
+  let date = new Date().getDate()
 
-
-
-for (let i = 0; i <= 4; i++) {
-  dayWeater.push(weth[0]?.list.filter(el => el.dt_txt.split(' ')[0].split('-')[2] == date + i))
-
-}
-console.log(dayWeater);
-
-  let dayTemp = []
-  // console.log('------>', weth);
-
-  // if (weth[0]) {
-  //   console.log('--------------->', weth);
-
-  // }
+  let curDate = new Date()
 
 
 
   if (weth[0]) {
-    dayTemp = {
-      temp: [],
-      time: []
+    
+    
+    for (let i = 0; i <= 4; i++) {
+      curDate.setDate(curDate.getDate() + i)
 
+      console.log(curDate.getDate());
+
+      dayWeater.push(weth[0]?.list.filter(el => el.dt_txt.split(' ')[0].split('-')[2] == curDate.getDate()))
+       curDate.setDate(curDate.getDate() - i)
     }
+  }
 
 
-    
-    
-    for (let index = 0; index < dayWeater[data].length ; index++) {
-      
-      
+
+  console.log(dayWeater);
+
+  let dayTemp = {
+    temp: [],
+    time: []
+
+  }
+
+
+
+
+  if (weth[0]) {
+
+
+
+
+
+    for (let index = 0; index < dayWeater[data].length; index++) {
+
+
       console.log('dayWeater from for', dayWeater[data][index]);
       dayTemp.time.push(dayWeater[data][index].dt_txt.split(' ')[1].split(':').splice(0, 2).join(':'))
-   
+
     }
 
-    
-    for (let index = 0; index < dayWeater[data].length ; index++) {
-      
+
+    for (let index = 0; index < dayWeater[data].length; index++) {
+
       dayTemp.temp.push(Math.floor(dayWeater[data][index].main.temp - 273))
 
     }
@@ -86,6 +94,8 @@ console.log(dayWeater);
 
   }
 
+
+  console.log('dayTemp---------------------->', dayTemp);
 
 
   let days = [
