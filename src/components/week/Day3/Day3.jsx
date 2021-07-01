@@ -1,4 +1,5 @@
 import { useWetherContext } from "../../../contexts/wetherContext"
+import '../../../App.css'
 
 function Wednesday() {
 
@@ -14,8 +15,8 @@ function Wednesday() {
                 weth.length ?
                     <>
 
-                        <button onClick={submitHandlerOk} type="button" className="btn btn-light mx-1 d-flex flex-column align-items-center">
-                            <div>
+                        <button onClick={submitHandlerOk} type="button" className="buttons btn btn-light d-flex flex-column align-items-center buttonWeather">
+                            <div className='dayWeek'>
                                 {
                                     daysWeek.day1 ?
                                         daysWeek.day3
@@ -25,19 +26,18 @@ function Wednesday() {
                             <div>
                                 {
                                     weth[0] ?
-                                        < img height='100px' width='100px' src={
+                                        <img alt='123' className='icon' src={
                                             `http://openweathermap.org/img/wn/${weth[0].list[20].weather[0].icon}@2x.png`}></img>
                                         : 'nothing'
                                 }
                             </div>
-                            <div height='1000px' width='100%' className='d-flex justify-content-between'>
+                            <div className='tempButton'>
                                 {
                                     weth[0] ?
                                         <p>{Math.floor(dayWeater[2][4].main.temp  - 273)}&deg;</p>
                                         : ''
 
                                 }
-                                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                                 {
                                     weth[0] ?
                                         <p>{Math.floor(dayWeater[2][7].main.temp  - 273)}&deg;</p>
@@ -50,7 +50,7 @@ function Wednesday() {
                         </button>
 
                     </>
-                    : <a>пусто</a>
+                    : <p>пусто</p>
             }
         </div >
     )

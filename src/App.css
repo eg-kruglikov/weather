@@ -1,9 +1,42 @@
+.allContainer {
+
+  border-radius : 5px;
+  width         : 100vw;
+  display       : flex;
+  align-items   : center;
+  flex-direction: column;
+
+  border          : solid;
+  border-width    : 10px;
+  border-color    : rgb(241, 241, 241);
+  background-color: rgb(255, 255, 255);
+}
+
+.weatherContainer {
+  display      : flex;
+  border-color : black;
+  border-radius: 3;
+
+}
+
+.cont {
+  width : 30vw;
+  height: 30vh;
+}
+
+.containerBody {
+  display        : flex;
+  justify-content: center;
+}
+
+
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height        : 40vmin;
   pointer-events: none;
 }
 
@@ -15,13 +48,13 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height      : 100vh;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  justify-content : center;
+  font-size       : calc(10px + 2vmin);
+  color           : white;
 }
 
 .App-link {
@@ -32,20 +65,128 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.allContainer{
-  border-radius: 5px;
-  width: 60vw;
-  padding: 3%;
+
+
+.buttons {
+  width: 10vw;
+}
+
+.tempButton {
+  width: 130px;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+
+.charWeather {
+  height  : 20vh;
+  width   : 45vw;
+  position: 'relative';
+}
+
+.weatherDay {
+  font-size: 15px;
+  height        : 100%;
+  display       : flex;
   flex-direction: column;
-  
-  border: solid;
-  border-width: 1px;
-  border-color: rgb(235, 235, 235);
+  align-items   : center;
+  width         : 100%;
+  margin-right: 10px;
+  white-space:nowrap
+}
+
+.icon {
+  height: 100px;
+  width : 100px
+}
+
+.dayWeek{
+  font-size: 20px;
+}
+
+.buttonWeather {
+  width : 150px;
+  height: 175px;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.footerStyle{
+  width: 53vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .allContainer {
+
+    border-radius : 5px;
+    width         : 100vw;
+    display       : flex;
+    align-items   : center;
+    flex-direction: column;
+
+    border          : solid;
+    border-width    : 10px;
+    border-color    : rgb(241, 241, 241);
+    background-color: rgb(255, 255, 255);
+  }
+
+  .buttonWeather {
+    width : 65px;
+    height: 95px;
+    margin-right: 1px;
+    margin-left: 1px;
+  }
+
+  .icon {
+    height: 60px;
+    width : 60px
+  }
+
+  .dayWeek{
+    font-size: 10px;
+    margin-bottom: -10px;
+  }
+
+  .tempButton {
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-around;
+    font-size: 10px;
+  }
+
+  .footerStyle{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .weatherDay {
+    font-size: 10px;
+    height        : 100%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    width         : 100px;
+    margin-right: 10px;
+  }
+
+  .charWeather {
+    height  : 170px;
+    width   : 350px;
+    position: 'relative';
+  }
 }

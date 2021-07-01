@@ -1,4 +1,5 @@
 import { useWetherContext } from "../../../contexts/wetherContext"
+import '../../../App.css'
 
 function Friday() {
 
@@ -15,8 +16,8 @@ function Friday() {
                 weth.length ?
                     <>
 
-                        <button onClick={submitHandlerOk} type="button" className="btn btn-light mx-1 d-flex flex-column align-items-center">
-                            <div>
+                        <button onClick={submitHandlerOk} type="button" className="buttons btn btn-light d-flex flex-column align-items-center buttonWeather">
+                            <div className='dayWeek'>
                                 {
                                     daysWeek.day1 ?
                                         daysWeek.day5
@@ -26,19 +27,18 @@ function Friday() {
                             <div>
                                 {
                                     weth[0] ?
-                                        < img height='100px' width='100px' src={
+                                        < img alt='hoba!' className='icon' src={
                                             `http://openweathermap.org/img/wn/${weth[0].list[36].weather[0].icon}@2x.png`}></img>
                                         : 'nothing'
                                 }
                             </div>
-                            <div height='1000px' width='100%' className='d-flex justify-content-between'>
+                            <div className='tempButton'>
                                 {
                                     dayWeater ?
                                         <p>{Math.floor(dayWeater[4][4].main.temp - 273)}&deg;</p>
                                         : ''
 
                                 }
-                                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                                 {
                                     dayWeater ?
                                         <p>{Math.floor(dayWeater[4][7].main.temp - 273)}&deg;</p>

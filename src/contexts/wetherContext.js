@@ -32,15 +32,11 @@ const WetherContextProvider = ({ children }) => {
     })
   }
 
-
   const dayWeater = []
 
-
-  let date = new Date().getDate()
+ // let date = new Date().getDate()
 
   let curDate = new Date()
-
-
 
   if (weth[0]) {
     
@@ -55,8 +51,6 @@ const WetherContextProvider = ({ children }) => {
     }
   }
 
-
-
   console.log(dayWeater);
 
   let dayTemp = {
@@ -66,16 +60,9 @@ const WetherContextProvider = ({ children }) => {
   }
 
 
-
-
   if (weth[0]) {
 
-
-
-
-
     for (let index = 0; index < dayWeater[data].length; index++) {
-
 
       console.log('dayWeater from for', dayWeater[data][index]);
       dayTemp.time.push(dayWeater[data][index].dt_txt.split(' ')[1].split(':').splice(0, 2).join(':'))
@@ -94,9 +81,7 @@ const WetherContextProvider = ({ children }) => {
 
   }
 
-
   console.log('dayTemp---------------------->', dayTemp);
-
 
   let days = [
     'Воскресенье',
@@ -107,10 +92,6 @@ const WetherContextProvider = ({ children }) => {
     'Пятница',
     'Суббота'
   ];
-
-
-
-
 
   function getClosestDays(limit) {
     let s = new Date();

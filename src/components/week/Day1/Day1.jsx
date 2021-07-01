@@ -1,4 +1,5 @@
 import { useWetherContext } from "../../../contexts/wetherContext"
+import '../../../App.css'
 
 function Monday() {
 
@@ -15,8 +16,8 @@ function Monday() {
                 weth.length ?
                     <>
 
-                        <button type="button" onClick={submitHandlerOk} className="btn btn-light mx-1 d-flex flex-column align-items-center">
-                            <div>
+                        <button  type="button" onClick={submitHandlerOk} className="buttons btn btn-light  d-flex flex-column align-items-center buttonWeather">
+                            <div className='dayWeek'>
                                 {
                                     daysWeek.day1 ?
                                         daysWeek.day1
@@ -26,26 +27,25 @@ function Monday() {
                             <div>
                                 {
                                     weth[0] ?
-                                        <img alt="asdfadf" height='100px' width='100px' src={
+                                        <img alt="asdfadf" className='icon' src={
                                             `http://openweathermap.org/img/wn/${weth[0].list[4].weather[0].icon}@2x.png`}></img>
                                         : 'nothing'
                                 }
                             </div>
-                            <div height='1000px' width='100%' className='d-flex justify-content-between'>
+                            <div className='tempButton'>
                                 {
                                     weth[0] ?
-                                    dayWeater[0][4] ?
-                                        <p>{Math.floor(dayWeater[0][4].main.temp - 273)}&deg;</p>
-                                        : <p>{Math.floor(dayWeater[0][0].main.temp - 273)}&deg;</p>
+                                        dayWeater[0][4] ?
+                                            <p>{Math.floor(dayWeater[0][4].main.temp - 273)}&deg;</p>
+                                            : <p>{Math.floor(dayWeater[0][0].main.temp - 273)}&deg;</p>
                                         : ''
 
                                 }
-                                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
                                 {
                                     weth[0] ?
-                                    dayWeater[0][7] ?
-                                        <p>{Math.floor(dayWeater[0][7].main.temp - 273)}&deg;</p>
-                                        : <p>{Math.floor(dayWeater[0][dayWeater[0].length - 1].main.temp - 273)}&deg;</p>
+                                        dayWeater[0][7] ?
+                                            <p>{Math.floor(dayWeater[0][7].main.temp - 273)}&deg;</p>
+                                            : <p>{Math.floor(dayWeater[0][dayWeater[0].length - 1].main.temp - 273)}&deg;</p>
                                         : ''
 
                                 }
@@ -56,7 +56,7 @@ function Monday() {
                         </button>
 
                     </>
-                    : <a>пусто</a>
+                    : <p>пусто</p>
             }
         </div >
 
